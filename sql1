@@ -1,0 +1,16 @@
+
+CREATE TABLE `analysis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `issuekey` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `issuekey` (`issuekey`)
+) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `prefixes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prefix` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `prefix` (`prefix`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
