@@ -1,15 +1,15 @@
 <?php
-// Database configuration
-$host = "localhost"; // Change this to your database host
-$dbname = "myappsec"; // Change this to your database name
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "datafetch";
 
-// PDO connection
-try {
-    $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+?>
